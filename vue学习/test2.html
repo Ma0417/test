@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div @click="show2()">
+        <input type="button" value="按钮" v-on:click="show1()">
+    </div>
+</div>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="vue.js"></script>
+<script>
+    window.onload=function(){
+        new Vue({
+            el:'#box',
+            data:{
+
+            },
+            method:{
+                show1:function () {
+                    alert(1);
+                },
+                show2:function () {
+                    alert(2);
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>
