@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div @click="show2()">
+        <input type="button" value="按钮" @contextmenu.prevent="show($event)">
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    window.onload=function () {
+        new Vue({
+            el:'#box',
+            data:{
+
+            },
+            methods:{
+                show:function () {
+                    alert(1);
+//                    ev.preventDefault();//原生阻止默认行为
+                },
+            }
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+属性：
+
+v-bind:属性="属性值"；  //vue绑定属性
+：属性=“属性值”  //绑定属性简写
+
+class&style---
+:class="[red，b]"   //red是数据
+
+:class="{red:布尔,blue:布尔}"  //red是class的值  布尔可以用值代替；
+
+----------------------
+style：
+
+:style="[c]"    --c:{color:red，backGround:blue}  //c是数据,复合样式必须驼峰命名
+
+：style=“json”  data:{json:{red:a,blue:false}}
+
+
+-------------------------------
+模板：
+
+{{msg}}  数据更新模板变化
+
+{{*msg}}  数据只绑定一次
+
+{{{msg}}}  里面可以出现html标签
+
+--------------------
+过滤器：->过滤模板数据
+系统提供一些过滤器:
+{{'字符串'}}  //不用data定义  可直接输出字符串内容
+{{msg| filterA | filterB}}  //给msg添加过滤器
+uppercase / lowercase / capitalize  大小写首字母大写
+ currency 表示美元  {{msg | currency '$/rem'}}  //可以自定义参数
+
+------------------
+交互:
+    $http(ajax)
+
+     vue想做交互：vue-resouce
+
+     get:
+
+     posy:
+
+     jsonp:
