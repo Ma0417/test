@@ -16,13 +16,23 @@
 
             },
             methods:{
-//                get:function () {
+                get:function () {
+                    //获取一个普通文本数据
 //                    this.$http.get('Avue.txt').then(function (res) {
 //                        document.write(res.data)
 //                    },function (res) {
 //                        alert(res.status)
 //                    });
-//                }
+                    //发送一个数据
+                    this.$http.get('get.php',{
+                        a:1,
+                        b:2
+                    }).then(function(res){
+                        alert(res.data);
+                    },function(res){
+                        alert(res.status);
+                    });
+                }
             }
         })
     }
