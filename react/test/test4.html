@@ -10,9 +10,14 @@
 <body>
 <div id="demo"></div>
 <script type="text/babel">
+    var HelloReact=React.createClass({
+        render:function () {
+            return <h1>Hello {this.props.name}</h1>
+        }
+    });
     ReactDOM.render(
-
-        document.getElementById('demo')
+         <HelloReact name="makang"/>,
+         document.getElementById('demo')
     );
 </script>
 </body>

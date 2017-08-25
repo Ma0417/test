@@ -8,10 +8,23 @@
     <script src="../build/browser.min.js"></script>
 </head>
 <body>
+
 <div id="demo"></div>
 <script type="text/babel">
+    function formatName(user) {
+        return user.firstName+' '+user.lastName;
+    }
+    const user={
+        firstName:'makang',
+        lastName:'chenting'
+    }
+    const element=(
+            <h1>
+                hello,{formatName(user)}!
+            </h1>
+    );
     ReactDOM.render(
-
+        element,
         document.getElementById('demo')
     );
 </script>

@@ -10,10 +10,20 @@
 <body>
 <div id="demo"></div>
 <script type="text/babel">
-    ReactDOM.render(
+    function Elock() {
+        const element=(
+            <div>
+                <h1>这是时间</h1>
+                <h2>{new Date().toLocaleString()}</h2>
+            </div>
+        );
+        ReactDOM.render(
+            element,
+            document.getElementById('demo')
+        );
+    }
+    setInterval(Elock,1000)
 
-        document.getElementById('demo')
-    );
 </script>
 </body>
 </html>
