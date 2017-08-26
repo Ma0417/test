@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="demo"></div>
+<script type="text/babel">
+    class Toggle extends React.Component {
+
+        constructor(props){
+            super(props);
+            this.state = {isToggleOn: true};  // 一个状态
+            this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick() {
+            console.log(this)
+            this.setState(prevState => ({        // 改变状态
+                isToggleOn: !prevState.isToggleOn
+            }))
+        }
+        render() {
+            {/* 调用事件处理函数*/}
+            return (
+                    <button onClick={this.handleClick}>
+                        {this.state.isToggleOn ? "On": "Off"}
+                    </button>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <Toggle />,
+        document.getElementById('demo')
+    );
+</script>
+</body>
+</html>

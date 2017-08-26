@@ -10,21 +10,21 @@
 <body>
 <div id="demo"></div>
 <script type="text/babel">
-    function Welcome(props) {
-        return <h1>hello,{props.name}</h1>
-    }
-    function App(){
-        return(
-          <div>
-              <Welcome name="vue"/>
-              <Welcome name="react"/>
-              <Welcome name="angular"/>
-          </div>
+    const numbers1=[1,2,3,4,5];
+//    const listItem=numbers.map((number)=>
+//        <li>{number}</li>
+//    );
+    function NumberList(props) {
+        const numbers=props.numbers;
+        const listItem=numbers.map((number)=>
+            <li>{number}</li>
+        );
+        return (
+            <ul>{listItem}</ul>
         );
     }
-    const element=<App/>;
     ReactDOM.render(
-        element,
+        <NumberList numbers={numbers1}/>,
         document.getElementById('demo')
     );
 </script>

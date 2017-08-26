@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="demo"></div>
+<script type="text/babel">
+    var MyComp = React.createClass({
+        getInitialState: function() {
+            return {userInput: ''};
+        },
+        handleChange: function(e) {
+            this.setState({userInput: e.target.value});
+        },
+        clearAndFocusInput: function() {
+            // 清空输入的数据
+            this.setState({userInput: ''}, function() {
+                // 此处获得真实DOM并获得焦点
+                this.theInput.focus();
+            });
+        },
+        render: function() {
+            return (
+                    <div>
+                        <div onClick={this.clearAndFocusInput}>
+                            单击获得焦点并清空
+                        </div>
+                        <input
+                                ref={(compInstance)=>this.theInput=compInstance}
+                                value={this.state.userInput}
+                                onChange={this.handleChange}
+                        />
+                    </div>
+            );
+        }
+    });
+    ReactDOM.render(
+        <MyComp/>,
+        document.getElementById('demo')
+    )
+</script>
+</body>
+</html>

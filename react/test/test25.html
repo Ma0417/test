@@ -10,21 +10,17 @@
 <body>
 <div id="demo"></div>
 <script type="text/babel">
+    var obj = {
+        name: "jason",
+        num : 28
+    }
+
     function Welcome(props) {
-        return <h1>hello,{props.name}</h1>
+        return  <h1> {props.name} {props.num}</h1>
     }
-    function App(){
-        return(
-          <div>
-              <Welcome name="vue"/>
-              <Welcome name="react"/>
-              <Welcome name="angular"/>
-          </div>
-        );
-    }
-    const element=<App/>;
+
     ReactDOM.render(
-        element,
+        <Welcome {...obj}/>, //  对象传递数据
         document.getElementById('demo')
     );
 </script>

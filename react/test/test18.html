@@ -10,15 +10,16 @@
 <body>
 <div id="demo"></div>
 <script type="text/babel">
+
     function formatDate(date) {
         return date.toLocaleDateString();
     }
     function Comment(props) {
-        return (
+        return(
                 <div className="Comment">
                     <div className="UserInfo">
                         <img className="Avatar"
-                             src={props.author.avatarUrl}
+                             src={props.author.avatarURL}
                              alt={props.author.name} />
                         <div className="UserInfo-name">
                             {props.author.name}
@@ -33,20 +34,20 @@
                 </div>
         );
     }
-
-    const comment = {
-        date: new Date(),
-        text: 'I hope you enjoy learning React!',
-        author: {
-            name: 'Hello Kitty',
-            avatarUrl: 'http://placekitten.com/g/64/64'
+    const comment={
+        date:new Date(),
+        text:'i hope you enjoy learning react',
+        author:{
+            name:'Hello Kitty',
+            avatarURL:'http://placekitten.com/g/64/64'
         }
-    };
+    }
     ReactDOM.render(
-            <Comment
-                    date={comment.date}
-                    text={comment.text}
-                    author={comment.author} />,
+        <Comment
+            date={comment.date}
+            text={comment.text}
+            author={comment.author}
+        />,
         document.getElementById('demo')
     );
 </script>
