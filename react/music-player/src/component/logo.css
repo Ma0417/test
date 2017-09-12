@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+
+}
+body{
+    background: #eaeaea;
+}
+.row{
+    display: block;
+    width: 100%;
+    padding: 10px 5%;
+}
+.components-logo{
+    position: fixed;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 2px 2px 4px rgba(0,0,0,0.1);
+}
+.-col-auto{
+    float: left;
+}
+.caption{
+    float: right;
+    color: #ff8362;
+    font-size: 20px;
+}
